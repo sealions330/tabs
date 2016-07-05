@@ -50,6 +50,32 @@
   </div>
   <div id="tabs-2">
     <p>Search the library catalog, CUNY+, to find books, eBooks, print journals and media.</p>
+        <form action="http://libsearch.cuny.edu.hostos.ezproxy.cuny.edu:2048/F/" method="get">
+          <input type="hidden" name="func" value="find-e" />
+          Keyword(s):
+          <input type="text" name="request" />
+          Search in:
+          <select name="find_scan_code"> 
+          	<option value="FIND_WRD" selected="selected">All Fields</option> 
+          	<option value="SCAN_TTL">Title begins with...</option> 
+          	<option value="SCAN_AUT">Author, last name first...</option> 
+          	<option value="SCAN_SUL">Subject begins with...</option> 
+          	<option value="FIND_WTI">Keyword in title</option> 
+          	<option value="FIND_WAU">Keyword in author</option> 
+          	<option value="FIND_WSU">Keyword in subject</option> 
+          	<option value="SCAN_SUC">Children's subject begins with...</option> 
+          	<option value="SCAN_SUM">MeSH subject begins with...</option> 
+          	<option value="SCAN_SHL">Call number</option> 
+          	<option value="SCAN_ISBN">Browse ISBN</option> 
+          	<option value="SCAN_ISSN">Browse ISSN</option> 
+          </select>
+          Phrase?:
+          <select name="adjacent">
+          	<option selected="selected" value="N">No</option>
+          	<option value="Y">Yes</option>
+          </select>
+          <input type="submit" value="Search" />
+      </form>
   </div>
   <div id="tabs-3">
     <p>Find databases by subject: </p>
