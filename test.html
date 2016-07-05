@@ -25,6 +25,27 @@
   <div id="tabs-1">
     <p>
       Search the CUNY library catalog, articles from journals, magazines and newspapers and other digital content from the library. Off campus? Read this. 
+        <form name="searchPrimoForm" role="search" method="get" action="http://onesearch.cuny.edu/primo_library/libweb/action/dlSearch.do" enctype="application/x-www-form-urlencoded; charset=utf-8">
+            <input name="institution" value="HO" type="hidden" />
+            <input name="vid" value="ho" type="hidden" />
+            <input name="group" value="GUEST" type="hidden" />
+            <input name="onCampus" value="true" type="hidden" />
+            <input name="search_scope" value="everything" type="hidden" />
+            <input name="rfnGrp" value="1" type="hidden" />
+            <input name="rfnGrpCounter" value="1" type="hidden" />
+            <input name="highlight" id="highlight" value="true" type="hidden" />
+            <input name="displayField" id="displayField" value="title" type="hidden" />
+            <input name="query" id="primoQuery" type="hidden" />
+            <input name="queryTemp" id="primoQueryTemp" type="search" value="" placeholder="Enter search term here" class="form-control" />
+            <input value="Search" id="go" class="btn btn-primary" title="Search books, articles & more" alt="Search" type="submit" onclick="addPrimoQuery();" />
+        </form>
+        <script type="text/javascript">
+        function addPrimoQuery() {
+        	document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value;
+        	document.forms["searchPrimoForm"].submit();
+        }
+        </script>
+    
     </p>
   </div>
   <div id="tabs-2">
